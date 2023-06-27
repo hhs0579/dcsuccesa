@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "352294110923",
+    "project_id": "desucces-ec2d3",
+    "storage_bucket": "desucces-ec2d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352294110923:android:56755befd0011efc62fd4e",
+        "android_client_info": {
+          "package_name": "com.dcsucces.dcsucces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352294110923-v5baj97skff2mvldjfajvs6mdmfkoarl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dcsucces.dcsucces",
+            "certificate_hash": "2c111ce971e5449cec7a7ad7cb581e25b3d5fd4d"
+          }
+        },
+        {
+          "client_id": "352294110923-gfhij7ss9c8f3no88cr1albdbstdkbnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8ZdhgqYyillriiBA8bzOPHVRITt269o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352294110923-gfhij7ss9c8f3no88cr1albdbstdkbnm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "352294110923-dh08imiuro62vi11bd45nsol7sip5u60.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dcsucces.dcsucces"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

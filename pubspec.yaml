@@ -46,8 +46,16 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   get:
+  logger:
   firebase_core:
   firebase_auth:
+  cloud_firestore:
+  firebase_auth_platform_interface:
+  firebase_crashlytics:
+  firebase_storage:
+  firebase_messaging:
+  fluttertoast:
+  shared_preferences:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

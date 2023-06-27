@@ -1,8 +1,26 @@
-import 'package:dcsucces/start/login.dart';
+import 'package:dcsucces/pages/start/start.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'firebase_options.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:logger/logger.dart';
 
-void main() {
+FirebaseAuth auth = FirebaseAuth.instance;
+User? user = auth.currentUser;
+String? uid = user?.uid;
+var logger = Logger(
+  printer: PrettyPrinter(),
+);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await Firebase.initializeApp();
+  // Firebase Messaging 초기화
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(MainApp());
@@ -33,7 +51,7 @@ class MainApp extends StatelessWidget {
           ),
           primarySwatch: Colors.deepPurple,
           fontFamily: 'Noto'),
-      home: const LoginPage(),
+      home: const StartPage(),
     );
   }
 }

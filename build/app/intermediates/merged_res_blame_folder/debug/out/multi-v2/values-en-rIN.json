@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.dcsucces.dcsucces.app-mergeDebugResources-13:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.dcsucces.dcsucces.app-mergeDebugResources-17:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
-                    "source": "/Users/haeseong/.gradle/caches/transforms-3/4ca28c4a71705f8a687c69dda140a277/transformed/core-1.6.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/haeseong/.gradle/caches/transforms-3/a0dd6f647534fcb5adaadc0542acf549/transformed/core-1.6.0/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/haeseong/.gradle/caches/transforms-3/392643a040d0a7ef9b2ed4537c4719d5/transformed/browser-1.4.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/haeseong/.gradle/caches/transforms-3/79927ea7c10663efc35dd499350d8b15/transformed/browser-1.4.0/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

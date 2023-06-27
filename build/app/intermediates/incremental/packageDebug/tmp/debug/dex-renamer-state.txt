@@ -1,0 +1,4 @@
+#Tue Jun 27 10:45:26 KST 2023
+base.0=/Users/haeseong/Desktop/dcsucces/dcsucces/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

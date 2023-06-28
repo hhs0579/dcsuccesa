@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
@@ -8,8 +6,8 @@ import 'appdata.dart';
 import 'dbcontroller.dart';
 import 'localcon.dart';
 
-
 AuthController authController = AuthController();
+
 class AuthController {
   Future authUser(String email, String password) async {
     try {
@@ -23,7 +21,6 @@ class AuthController {
       if (pushToken != null) {
         databaseController.updatePushToken(
           email: email,
-            
           pushToken: pushToken,
         );
       }
@@ -43,6 +40,7 @@ class AuthController {
     }
     return null;
   }
+
   Future<void> _saveLocalStorage(UserCredential userCredential) async {
     AppData appData = Get.find();
     appData.userEmail = userCredential.user?.email ?? 'null';

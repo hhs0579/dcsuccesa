@@ -41,7 +41,7 @@ class _RegistState extends State<Regist> {
 
   DatabaseController databaseController = DatabaseController();
 
-  final AuthService _authJoin = AuthService();
+  final AuthController _authJoin = AuthController();
 
   final _postTextEditor = TextEditingController();
   final _addressTextEditor = TextEditingController();
@@ -50,7 +50,7 @@ class _RegistState extends State<Regist> {
 
   final formKey = GlobalKey<FormState>();
 
-  final AuthService _authService = AuthService();
+  final AuthController _authService = AuthController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<String> createUserWithEmailAndPassword(

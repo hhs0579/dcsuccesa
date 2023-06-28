@@ -1,9 +1,8 @@
-import 'package:dcsucces/pages/scan/code.dart';
 import 'package:dcsucces/utils/color.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../main.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,6 +18,45 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool passwordHide = true;
+  Widget _userIdWidget() {
+    return TextFormField(
+      style: const TextStyle(color: Colors.black),
+      controller: emailController,
+      textInputAction: TextInputAction.next,
+      onEditingComplete: () =>
+          FocusScope.of(context).requestFocus(passwordFocusNode),
+      keyboardType: TextInputType.emailAddress,
+      decoration: const InputDecoration(
+        labelText: '이메일 주소 입력',
+      ),
+      validator: (String? value) {
+        if (value!.isEmpty) {
+          // == null or isEmpty
+          return '이메일을 입력해주세요.';
+        }
+        return null;
+      },
+    );
+  }
+
+  Widget _passwordWidget() {
+    return TextFormField(
+      style: const TextStyle(color: Colors.black),
+      controller: passwordController,
+      obscureText: true,
+      keyboardType: TextInputType.visiblePassword,
+      focusNode: passwordFocusNode,
+      decoration: const InputDecoration(labelText: '비밀번호 입력'),
+      validator: (String? value) {
+        if (value!.isEmpty) {
+          // == null or isEmpty
+          return '비밀번호를 입력해주세요.';
+        }
+        return null;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -59,15 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Nato')),
                         ),
-                        TextFormField(
-                          textInputAction: TextInputAction.next,
-                          onEditingComplete: () => FocusScope.of(context)
-                              .requestFocus(passwordFocusNode),
-                          keyboardType: TextInputType.emailAddress,
-                          controller: emailController,
-                          decoration:
-                              const InputDecoration(labelText: '이메일 주소 입력'),
-                        ),
+                        _userIdWidget(),
                         Container(
                           margin: const EdgeInsets.only(top: 40),
                           alignment: Alignment.centerLeft,
@@ -78,14 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Nato')),
                         ),
-                        TextFormField(
-                          controller: passwordController,
-                          decoration:
-                              const InputDecoration(labelText: '사용하실 비밀번호 입력'),
-                          keyboardType: TextInputType.visiblePassword,
-                          focusNode: passwordFocusNode,
-                          obscureText: passwordHide,
-                        ),
+                        _passwordWidget()
                       ],
                     ),
                   ),
@@ -140,8 +163,12 @@ class _LoginPageState extends State<LoginPage> {
           email: emailController.text,
           password: passwordController.text,
         );
-
-        Get.offAll(() => const LoginCodePage());
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setBool('isLoggedIn', true);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const MainPage()),
+        );
       } on FirebaseAuthException catch (e) {
         logger.e(e);
         String message = '';

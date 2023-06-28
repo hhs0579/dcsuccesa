@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'myinfo.dart';
 
 class AppData extends GetxController {
@@ -10,15 +9,12 @@ class AppData extends GetxController {
   String _userEmail = '';
   // bool _isExpertMode = false;
   MyInfo _myInfo = MyInfo(
-      date: DateTime.now(),
-      email: '',
-      password: '',
-      name: '',
-      pushToken: '',
-      uid: '',
-      datetime: '',
-      pillname: '');
-
+    date: DateTime.now(),
+    email: '',
+    password: '',
+    name: '',
+    uid: '',
+  );
 
   int get currentScreenIndex => _currentScreenIndex;
   set currentScreenIndex(int currentScreenIndex) {
@@ -43,8 +39,6 @@ class AppData extends GetxController {
     _myInfo = myInfo;
     update();
   }
-
-
 
   String get userEmail => _userEmail;
   set userEmail(String userEmail) {

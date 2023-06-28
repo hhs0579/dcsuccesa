@@ -12,37 +12,37 @@ class DatabaseService {
 
   Future setUserData(
     DateTime date,
-    String _email,
-    String _name,
-    String _password,
+    String email,
+    String name,
+    String password,
   ) async {
     await userCollection.doc(uid).set({
       'date': date,
-      'email': _email,
-      'name': _name,
-      'password': _password,
+      'email': email,
+      'name': name,
+      'password': password,
       'uid': uid
     });
   }
 
   Future updateUserData(
-    String _name,
-    String _password,
+    String name,
+    String password,
   ) async {
     await userCollection.doc(uid).update({
-      'name': _name,
-      'password': _password,
+      'name': name,
+      'password': password,
     });
   }
 
   Future setClubData(
-    String _name,
-    String _image,
+    String name,
+    String image,
   ) async {
-    await clubCollection.doc(_name).set({
+    await clubCollection.doc(name).set({
       'date': DateTime.now(),
-      'name': _name,
-      'image': _image,
+      'name': name,
+      'image': image,
       'clubmaster': uid,
       'clubuserlist': [uid],
       'clubuser': 1,

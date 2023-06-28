@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 import 'appdata.dart';
 import 'myinfo.dart';
 
-
-
 DatabaseController databaseController = DatabaseController();
 
 class DatabaseController {
@@ -52,7 +50,6 @@ class DatabaseController {
       {required String email, required String pushToken}) async {
     AppData appData = Get.find();
     MyInfo newMyInfo = appData.myInfo;
-    newMyInfo.pushToken = pushToken;
     appData.myInfo = newMyInfo;
 
     final querySnapshot = await FirebaseFirestore.instance
